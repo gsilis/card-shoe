@@ -1,6 +1,6 @@
 import { Card } from "./cards/card";
 import { Deck } from "./cards/deck";
-import { randomize, range } from "./utils/array";
+import { randomize, fill } from "./utils/array";
 
 export class Shoe {
   cards: Card[] = [];
@@ -23,7 +23,7 @@ export class Shoe {
   }
 
   fill() {
-    this.cards = range(0, this.decks).reduce((cards: Card[]) => {
+    this.cards = fill(0, this.decks).reduce((cards: Card[]) => {
       return [
         ...cards,
         ...Deck.generateCards(),
