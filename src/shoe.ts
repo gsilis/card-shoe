@@ -37,16 +37,6 @@ export class Shoe {
     return this.remaining / this.total;
   }
 
-  private fill() {
-    this._shuffled = false;
-    this._cards = fill(this.decks).reduce((cards: Card[]) => {
-      return [
-        ...cards,
-        ...Deck.generateCards(),
-      ];
-    }, []);
-  }
-
   shuffle(repeat: number = 3) {
     fill(repeat).forEach(() => {
       this._cards = shuffle(randomize(this._cards));
@@ -60,5 +50,15 @@ export class Shoe {
     }
 
     return this._cards.pop();
+  }
+
+  private fill() {
+    this._shuffled = false;
+    this._cards = fill(this.decks).reduce((cards: Card[]) => {
+      return [
+        ...cards,
+        ...Deck.generateCards(),
+      ];
+    }, []);
   }
 }
