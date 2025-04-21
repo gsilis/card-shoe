@@ -39,5 +39,5 @@ while newDeck.length less than deck length
 ```
 
 # TODO
-- [] Create `index.js` or `main.js` so this can be imported as a package.
-- [] Automatic build step.
+- [ ] Create `index.js` or `main.js` so this can be imported as a package.
+- [ ] Automatic build step.
