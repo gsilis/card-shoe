@@ -17,7 +17,6 @@ export const suits: Suit[] = [
   SPADE,
 ];
 
-export const ONE = '1';
 export const TWO = '2';
 export const THREE = '3';
 export const FOUR = '4';
@@ -33,7 +32,6 @@ export const KING = 'KING';
 export const ACE = 'ACE';
 
 export type Value = (
-  typeof ONE |
   typeof TWO |
   typeof THREE |
   typeof FOUR |
@@ -50,7 +48,6 @@ export type Value = (
 );
 
 export const values: Value[] = [
-  ONE,
   TWO,
   THREE,
   FOUR,
@@ -65,6 +62,29 @@ export const values: Value[] = [
   KING,
   ACE,
 ];
+
+const SuitSymols = {
+  [CLUB]: '♣️',
+  [DIAMOND]: '♦️',
+  [HEART]: '♥️',
+  [SPADE]: '♠️',
+};
+
+const ValueSumbols = {
+  [TWO]: '2',
+  [THREE]: '3',
+  [FOUR]: '4',
+  [FIVE]: '5',
+  [SIX]: '6',
+  [SEVEN]: '7',
+  [EIGHT]: '8',
+  [NINE]: '9',
+  [TEN]: '10',
+  [JACK]: 'J',
+  [QUEEN]: 'Q',
+  [KING]: 'K',
+  [ACE]: 'A',
+};
 
 export class Card {
   private _isFace: boolean;
@@ -95,5 +115,9 @@ export class Card {
 
   get isBlack() {
     return this._isBlack;
+  }
+
+  toString(): string {
+    return `${ValueSumbols[this._value]} ${SuitSymols[this._suit]}`;
   }
 }

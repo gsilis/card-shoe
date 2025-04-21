@@ -1,4 +1,4 @@
-import ArrayUtils, { fill, pickANumber, randomize, sample } from "./array";
+import ArrayUtils, { fill, pickANumber, randomize, sample, shuffle } from "./array";
 
 describe('Array', () => {
   describe('fill()', () => {
@@ -66,6 +66,20 @@ describe('Array', () => {
       const result = pickANumber(3, 3);
 
       expect(result).toEqual(3);
+    });
+  });
+
+  describe('shuffle()', () => {
+    it('splits the array and merges them back like a zipper', () => {
+      const source = [1, 2, 3, 4, 5, 6];
+
+      expect(shuffle(source)).toEqual([1, 4, 2, 5, 3, 6]);
+    });
+
+    it('works with odd length arrays', () => {
+      const source = [1, 2, 3, 4, 5];
+
+      expect(shuffle(source)).toEqual([1, 4, 2, 5, 3]);
     });
   });
 });

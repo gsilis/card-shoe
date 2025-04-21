@@ -47,9 +47,29 @@ export function pickANumber(from: number, to: number) {
   return Math.round(from + (range * rando));
 }
 
+export function shuffle<T>(arr: T[]): T[] {
+  const size = arr.length;
+  const halfpoint = Math.round(size / 2);
+  const arr1 = arr.slice(0, halfpoint);
+  const arr2 = arr.slice(halfpoint);
+  let next = arr1;
+
+  const result: T[] = [];
+
+  while (result.length < size) {
+    // Zero chance that the array here would have an undefined value
+    // unless it is from the passed source array.
+    result.push(next.shift() as T);
+    next = next === arr1 ? arr2 : arr1;
+  }
+
+  return result;
+}
+
 export default {
   fill,
   randomize,
   sample,
   pickANumber,
+  shuffle,
 };
