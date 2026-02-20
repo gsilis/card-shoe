@@ -1,29 +1,18 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const card_1 = require("./cards/card");
-const deck_1 = require("./cards/deck");
-exports.default = {
-    Deck: deck_1.Deck,
-    Card: card_1.Card,
-    Values: {
-        TWO: card_1.TWO,
-        THREE: card_1.THREE,
-        FOUR: card_1.FOUR,
-        FIVE: card_1.FIVE,
-        SIX: card_1.SIX,
-        SEVEN: card_1.SEVEN,
-        EIGHT: card_1.EIGHT,
-        NINE: card_1.NINE,
-        TEN: card_1.TEN,
-        JACK: card_1.JACK,
-        QUEEN: card_1.QUEEN,
-        KING: card_1.KING,
-        ACE: card_1.ACE,
-    },
-    Suits: {
-        CLUB: card_1.CLUB,
-        DIAMOND: card_1.DIAMOND,
-        HEART: card_1.HEART,
-        SPADE: card_1.SPADE,
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
     }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./cards/card"), exports);
+__exportStar(require("./cards/deck"), exports);
