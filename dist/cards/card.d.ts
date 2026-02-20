@@ -1,0 +1,36 @@
+export declare const CLUB = "club";
+export declare const DIAMOND = "diamond";
+export declare const HEART = "heart";
+export declare const SPADE = "spade";
+export type Suit = (typeof CLUB | typeof DIAMOND | typeof HEART | typeof SPADE);
+export declare const suits: Suit[];
+export declare const TWO = "2";
+export declare const THREE = "3";
+export declare const FOUR = "4";
+export declare const FIVE = "5";
+export declare const SIX = "6";
+export declare const SEVEN = "7";
+export declare const EIGHT = "8";
+export declare const NINE = "9";
+export declare const TEN = "10";
+export declare const JACK = "JACK";
+export declare const QUEEN = "QUEEN";
+export declare const KING = "KING";
+export declare const ACE = "ACE";
+export type Value = (typeof TWO | typeof THREE | typeof FOUR | typeof FIVE | typeof SIX | typeof SEVEN | typeof EIGHT | typeof NINE | typeof TEN | typeof JACK | typeof QUEEN | typeof KING | typeof ACE);
+export declare const values: Value[];
+export declare class Card {
+    private _suit;
+    private _value;
+    private _isFace;
+    private _isRed;
+    private _isBlack;
+    constructor(_suit: Suit, _value: Value);
+    clone(): Card;
+    get value(): Value;
+    get suit(): Suit;
+    get isFace(): boolean;
+    get isRed(): boolean;
+    get isBlack(): boolean;
+    toString(): string;
+}
