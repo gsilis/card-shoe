@@ -105,6 +105,9 @@ export class Card {
     return new Card(this._suit, this._value);
   }
 
+  get value() { return this._value }
+  get suit() { return this._suit }
+
   get isFace() {
     return this._isFace;
   }
